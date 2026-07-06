@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
        2) Copiá el link generado.
        3) Pegalo abajo reemplazando el valor de CHECKOUT_URL.
        Ejemplos válidos: https://mpago.la/XXXXXXX o https://link.mercadopago.com/tuusuario */
-    const CHECKOUT_URL = "https://ebooksaudiolibros.myshopify.com/products/metodo-calmacanina-guia-digital-para-reducir-la-ansiedad-por-separacion-de-tu-perro-en-21-dias";
+    const CHECKOUT_URL = "https://link.mercadopago.com.ar/calmacaninos";
 
     document.querySelectorAll("[data-checkout-link]").forEach(link => {
         link.setAttribute("href", CHECKOUT_URL);
