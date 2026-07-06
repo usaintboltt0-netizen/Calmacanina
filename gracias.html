@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Gracias por tu compra! | CalmaCanina</title>
+    <meta name="theme-color" content="#1B4332" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #2F5D50;
+            --primary-dark: #18332B;
+            --secondary: #B8956F;
+            --accent: #A66A4B;
+            --bg: #FBF8F2;
+            --text: #20231F;
+            --text-secondary: #67645E;
+            --white: #FFFFFF;
+            --radius: 20px;
+            --radius-sm: 12px;
+            --shadow-card: 0 18px 50px rgba(42, 38, 31, .075);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: radial-gradient(circle at 12% 8%, rgba(184, 149, 111, .18), transparent 28rem),
+                linear-gradient(180deg, #fbf8f2 0%, #f7f1e8 48%, #fbf8f2 100%);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        .container {
+            width: min(760px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        /* Header */
+        .thanks-header {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+
+        .thanks-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .thanks-header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .thanks-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Access card */
+        .access-card {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            text-align: center;
+            margin-bottom: 32px;
+            box-shadow: 0 20px 60px rgba(27, 67, 50, .2);
+        }
+
+        .access-card h2 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .access-card p {
+            color: rgba(255, 255, 255, .85);
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .access-email {
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .9);
+        }
+
+        /* Download cards */
+        .download-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, .78);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(47, 93, 80, .09);
+            text-align: center;
+            transition: all .3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .download-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 70px rgba(42, 38, 31, .12);
+        }
+
+        .download-icon {
+            font-size: 2.4rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .download-card h3 {
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .download-card p {
+            font-size: .82rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 24px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50px;
+            font-size: .82rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .2s;
+        }
+
+        .download-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.03);
+        }
+
+        /* WhatsApp */
+        .whatsapp-card {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            text-align: center;
+            margin-bottom: 32px;
+            box-shadow: 0 14px 40px rgba(37, 211, 102, .25);
+        }
+
+        .whatsapp-card h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .whatsapp-card p {
+            color: rgba(255, 255, 255, .9);
+            font-size: .9rem;
+            margin-bottom: 12px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--white);
+            color: #128C7E;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: all .2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+        }
+
+        .support-note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: .85rem;
+            margin-bottom: 40px;
+        }
+
+        .support-note a {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: rgba(0, 0, 0, .3);
+            font-size: .72rem;
+            padding: 40px 0;
+        }
+
+        @media(max-width:640px) {
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+    <!-- Anti-flicker redirect to main page if accessed directly without purchase -->
+    <script>
+        // This page is meant to be accessed after purchase.
+        // For demo purposes, we allow direct access.
+        console.log('CalmaCanina - Página de entrega DEMO');
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="thanks-header">
+            <span class="thanks-emoji">🎉</span>
+            <h1>¡Gracias por tu compra!</h1>
+            <p>Bienvenida/o al Método CalmaCanina 🐶</p>
+        </div>
+
+        <!-- Access info -->
+        <div class="access-card">
+            <h2>Tu acceso está listo</h2>
+            <p>También te enviamos un email con estos mismos links a tu correo.</p>
+            <p><strong>Guardá esta página</strong> para acceder siempre a tus materiales.</p>
+            <div class="access-email">
+                📧 Si no encontrás el email, revisá la carpeta de spam o promociones.
+            </div>
+        </div>
+
+        <!-- Downloads -->
+        <h2 style="text-align:center;margin-bottom:16px;">📦 Tus materiales</h2>
+        <div class="download-grid">
+            <a class="download-card" href="#guia"
+                onclick="alert('⚠ DEMO: En la versión real este link descargará la Guía Principal en PDF (70+ páginas). Por ahora es un placeholder.'); return false;">
+                <span class="download-icon">📘</span>
+                <h3>Guía Principal</h3>
+                <p>70+ páginas · Método día por día · PDF</p>
+                <span class="download-btn">Descargar 📥</span>
+            </a>
+            <a class="download-card" href="#calendario"
+                onclick="alert('⚠ DEMO: En la versión real este link descargará el Calendario de 21 días en PDF. Por ahora es un placeholder.'); return false;">
+                <span class="download-icon">📅</span>
+                <h3>Calendario 21 Días</h3>
+                <p>Planificación diaria · Checklist · PDF</p>
+                <span class="download-btn">Descargar 📥</span>
+            </a>
+            <a class="download-card" href="Music/nourishedbymusic-peaceful-mantra-240925.mp3" download>
+                <span class="download-icon">🎵</span>
+                <h3>Audio de Relajación #1</h3>
+                <p>Frecuencia Theta · Lluvia · 417Hz · MP3</p>
+                <span class="download-btn">Descargar 📥</span>
+            </a>
+            <a class="download-card" href="Music/ribhavagrawal-pure-theta-4-7hz-rain-and-417hz-music-351390.mp3"
+                download>
+                <span class="download-icon">🎵</span>
+                <h3>Audio de Relajación #2</h3>
+                <p>Mantra pacífico · Meditación · MP3</p>
+                <span class="download-btn">Descargar 📥</span>
+            </a>
+            <a class="download-card" href="#videos"
+                onclick="alert('⚠ DEMO: En la versión real acá estarán los links a los 12 videos demostrativos (YouTube privado o Google Drive). Por ahora es un placeholder.'); return false;">
+                <span class="download-icon">🎬</span>
+                <h3>12 Videos Demostrativos</h3>
+                <p>Ejercicios paso a paso · Acceso online</p>
+                <span class="download-btn">Ver videos ▶</span>
+            </a>
+            <a class="download-card" href="#plantillas"
+                onclick="alert('⚠ DEMO: En la versión real este link descargará las Plantillas de Rutina Diaria imprimibles. Por ahora es un placeholder.'); return false;">
+                <span class="download-icon">📋</span>
+                <h3>Plantillas de Rutina</h3>
+                <p>Checklist diario · Imprimible · PDF</p>
+                <span class="download-btn">Descargar 📥</span>
+            </a>
+        </div>
+
+        <!-- WhatsApp community -->
+        <div class="whatsapp-card">
+            <h3>💬 Unite a la comunidad</h3>
+            <p>Compartí tu experiencia con otros dueños que están en el mismo camino.</p>
+            <a class="whatsapp-btn" href="#"
+                onclick="alert('⚠ DEMO: Acá irá el link de invitación al grupo de WhatsApp de la comunidad CalmaCanina.'); return false;">Unirme
+                al grupo de WhatsApp →</a>
+        </div>
+
+        <p class="support-note">
+            ¿Tenés dudas? Escribinos a <a href="mailto:calmacaninasuport@gmail.com">calmacaninasuport@gmail.com</a><br>
+            Garantía de 30 días · Devolución sin preguntas
+        </p>
+
+        <p class="footer-note">
+            ⚠ Esta es una página DEMO/Placeholder. Los archivos reales deben reemplazarse antes de la venta.<br>
+            © Método CalmaCanina
+        </p>
+    </div>
+</body>
+
+</html>
