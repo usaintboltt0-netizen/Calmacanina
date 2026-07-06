@@ -1567,6 +1567,46 @@ button:focus-visible {
     .author-stats {
         gap: 8px
     }
+
+    /* ═══ MENU HAMBURGUESA MOBILE ═══ */
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        background: rgba(251, 248, 242, .98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 1000;
+        padding: 80px 20px 40px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 8px 0;
+    }
+
+    .nav-cta {
+        font-size: 1.1rem !important;
+        padding: 14px 40px !important;
+        margin-top: 10px;
+    }
 }
 
 @media(max-width:640px) {
@@ -1586,6 +1626,29 @@ button:focus-visible {
             linear-gradient(90deg, rgba(13, 27, 20, .9) 0%, rgba(13, 27, 20, .72) 38%, rgba(13, 27, 20, .42) 68%, rgba(13, 27, 20, .2) 100%),
             radial-gradient(circle at 18% 45%, rgba(212, 165, 116, .22), transparent 30rem),
             url('BANERMOVIL.png') center 42% / cover no-repeat;
+    }
+
+    .hero .hero-grid {
+        gap: 24px;
+    }
+
+    .hero-content {
+        gap: 12px;
+    }
+
+    .product-mockup-main {
+        padding: 20px 16px;
+        max-width: 100%;
+    }
+
+    .mock-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .mock-list li {
+        padding: 6px 4px;
+        font-size: .72rem;
     }
 
     .testimonials-grid,
@@ -1623,28 +1686,153 @@ button:focus-visible {
 
     .mock-audio-bar {
         gap: 10px;
-        padding: 12px
+        padding: 12px;
+        flex-wrap: nowrap;
     }
 
     .mock-wave {
-        min-width: 78px;
-        height: 38px;
-        gap: 4px;
-        padding-inline: 10px
+        min-width: 60px;
+        height: 34px;
+        gap: 3px;
+        padding-inline: 8px
+    }
+
+    .mock-wave i:nth-child(1) {
+        height: 8px
+    }
+
+    .mock-wave i:nth-child(2) {
+        height: 12px
+    }
+
+    .mock-wave i:nth-child(3) {
+        height: 18px
+    }
+
+    .mock-wave i:nth-child(4) {
+        height: 24px
+    }
+
+    .mock-wave i:nth-child(5) {
+        height: 14px
+    }
+
+    .mock-wave i:nth-child(6) {
+        height: 20px
     }
 
     .mock-audio-copy strong {
-        font-size: .84rem
+        font-size: .8rem
     }
 
     .mock-audio-copy small,
     .mock-audio-badge {
-        font-size: .6rem
+        font-size: .55rem
     }
 
     .hero::before {
         inset: 88px 12px 28px;
         border-radius: 26px
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .step-card {
+        padding: 24px 20px;
+    }
+
+    .step-num {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .check-list li {
+        padding: 12px 14px;
+    }
+
+    .pain-item {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .pain-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .pain-item p {
+        font-size: .85rem;
+    }
+
+    .fit-card {
+        padding: 24px 20px;
+    }
+
+    .faq-btn {
+        padding: 14px 16px;
+        font-size: .85rem;
+    }
+
+    .faq-panel p {
+        padding: 0 16px 18px;
+        font-size: .85rem;
+    }
+
+    .countdown-item {
+        padding: 10px 12px;
+        min-width: 52px;
+    }
+
+    .countdown-num {
+        font-size: 1.2rem;
+    }
+
+    .after-card {
+        padding: 20px 16px;
+    }
+
+    .author-avatar-card {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .author-stats {
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .author-stat {
+        padding: 10px 6px;
+    }
+
+    .stat-num {
+        font-size: .95rem;
+    }
+
+    .stat-label {
+        font-size: .6rem;
+    }
+
+    .credential-badge {
+        font-size: .72rem;
+        padding: 6px 12px;
+    }
+
+    .testimonial-card {
+        padding: 20px 16px;
+    }
+
+    .sticky-cta-mobile {
+        padding: 8px 12px;
+    }
+
+    .sticky-cta-mobile .btn {
+        padding: 14px 20px;
+        font-size: .88rem;
     }
 }
 
