@@ -45,16 +45,15 @@ Para cambiar los links, editá `CHECKOUT_URL` y `SHOPIFY_URL` en `main.js`. Tamb
 4. Método en 3 pasos.
 5. Para quién es / para quién no es.
 6. Sobre la autora.
-7. Testimonios de ejemplo.
+7. Historias y testimonios.
 8. Bonos.
 9. Qué pasa después de comprar.
 10. Oferta, countdown, garantía y FAQ.
 
-## Pendientes antes de publicar
+## Pendientes opcionales antes de escalar campañas
 
-- Reemplazar el link ficticio de Mercado Pago por el link real de cobro.
-- Agregar Meta Pixel y Google Analytics en los placeholders del `<head>` si se van a hacer campañas.
-- Cambiar testimonios ficticios por testimonios reales con autorización.
+- Agregar Meta Pixel y Google Analytics si se van a hacer campañas pagas.
+- Revisar testimonios y materiales públicos para que siempre tengan autorización de uso.
 - Ajustar dominio, Open Graph image y email de soporte si se usa otro branding.
 
 ## Deploy con hosting propio
@@ -63,4 +62,4 @@ Podés subir estos archivos a Netlify, Vercel, GitHub Pages, Cloudflare Pages o 
 
 ## Nota legal
 
-Los testimonios actuales son ejemplos comerciales editables. Reemplazalos por testimonios reales antes de campañas pagas para evitar problemas de cumplimiento publicitario.
+El contenido del método es educativo y no reemplaza una consulta veterinaria profesional. Si el perro presenta síntomas médicos, dolor, heridas, cambios bruscos de conducta o ansiedad severa, se recomienda consultar a un veterinario o profesional de comportamiento canino.
