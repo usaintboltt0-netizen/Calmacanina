@@ -21,21 +21,21 @@ python -m http.server 8080
 
 Luego visitá: `http://localhost:8080`
 
-## Integración con Mercado Pago
+## Integración con Mercado Pago y Shopify
 
-Los botones de compra que salen a checkout usan el atributo `data-checkout-link`. El link se centraliza en `main.js`:
-
-```js
-const CHECKOUT_URL = "https://link.mercadopago.com/calmacanina-demo";
-```
-
-Ese link actual es **ficticio/demo** para revisar el procedimiento visual. Antes de publicar o correr anuncios, reemplazalo por tu link real de Mercado Pago, por ejemplo:
+Los botones de compra usan los atributos `data-checkout-link` (Mercado Pago) y `data-shopify-link` (Shopify). Los links se centralizan en `main.js`:
 
 ```js
-const CHECKOUT_URL = "https://mpago.la/TU_LINK_REAL";
+const CHECKOUT_URL = "https://mpago.li/13CBR7U";
+const SHOPIFY_URL = "https://ebooksaudiolibros.myshopify.com/";
 ```
 
-También podés reemplazar los `href` de respaldo en `index.html`, aunque `main.js` los actualiza automáticamente al cargar la página.
+Ambos métodos de pago aparecen en:
+- Sección de pricing (#pricing)
+- CTA final (sección 12)
+- Sticky CTA mobile (solo Mercado Pago, por espacio)
+
+Para cambiar los links, editá `CHECKOUT_URL` y `SHOPIFY_URL` en `main.js`. También podés reemplazar los `href` de respaldo en `index.html`, aunque `main.js` los actualiza automáticamente al cargar la página.
 
 ## Secciones principales
 

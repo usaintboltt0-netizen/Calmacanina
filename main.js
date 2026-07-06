@@ -39,9 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
        3) Pegalo abajo reemplazando el valor de CHECKOUT_URL.
        Ejemplos válidos: https://mpago.la/XXXXXXX o https://link.mercadopago.com/tuusuario */
     const CHECKOUT_URL = "https://mpago.li/13CBR7U";
+    const SHOPIFY_URL = "https://ebooksaudiolibros.myshopify.com/";
 
     document.querySelectorAll("[data-checkout-link]").forEach(link => {
         link.setAttribute("href", CHECKOUT_URL);
+    });
+
+    document.querySelectorAll("[data-shopify-link]").forEach(link => {
+        link.setAttribute("href", SHOPIFY_URL);
     });
 
     /* ═══ 1. STICKY HEADER ═══ */
