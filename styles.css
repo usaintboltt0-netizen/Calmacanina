@@ -69,7 +69,7 @@ a {
 }
 
 .section {
-    padding: 104px 0
+    padding: 72px 0
 }
 
 .bg-light,
@@ -662,6 +662,128 @@ p {
 .mock-list li:hover {
     background: rgba(47, 93, 80, .1);
     transform: translateY(-2px)
+}
+
+/* ═══ TRUST STRIP ═══ */
+.trust-strip {
+    background: linear-gradient(135deg, rgba(27, 67, 50, .06), rgba(47, 93, 80, .04));
+    border-top: 1px solid rgba(47, 93, 80, .08);
+    border-bottom: 1px solid rgba(47, 93, 80, .08);
+    padding: 22px 0;
+}
+
+.trust-strip-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--primary-dark);
+    font-size: .88rem;
+    font-weight: 500;
+    letter-spacing: .01em;
+}
+
+.trust-strip-inner span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.trust-strip-divider {
+    color: rgba(47, 93, 80, .2);
+    font-weight: 300;
+}
+
+/* ═══ BEFORE / AFTER ═══ */
+.before-after-section .before-after-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.ba-card {
+    background: rgba(255, 255, 255, .78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 32px 28px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(47, 93, 80, .09);
+    min-width: 260px;
+    flex: 1;
+    max-width: 340px;
+    text-align: center;
+    transition: all .3s;
+}
+
+.ba-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.ba-emoji {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.ba-before {
+    border-top: 4px solid #E07A5F;
+}
+
+.ba-after {
+    border-top: 4px solid var(--primary);
+}
+
+.ba-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.ba-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.ba-card ul li {
+    font-size: .88rem;
+    color: var(--text-secondary);
+    padding-left: 20px;
+    position: relative;
+}
+
+.ba-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.ba-before ul li::before {
+    background: #E07A5F;
+}
+
+.ba-after ul li::before {
+    background: var(--primary);
+}
+
+.ba-arrow {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    font-weight: 700;
+    flex-shrink: 0;
 }
 
 /* ═══ PAIN POINTS ═══ */
