@@ -14,13 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let trackIdx = 0;
 
     const audioBars = document.querySelectorAll(".mock-audio-bar");
+    let currentTrack = TRACKS[trackIdx];
+    audio.src = currentTrack;
 
     audioBars.forEach(bar => {
         bar.addEventListener("click", function onClick() {
             if (audio.paused) {
-                trackIdx = (trackIdx + 1) % TRACKS.length;
-                audio.src = TRACKS[trackIdx];
-                audio.play().catch(() => { });
+                if (!audio.src || audio.src === window.location.href) {
+                    trackIdx = (trackIdx + 1) % TRACKS.length;
+                    currentTrack = TRACKS[trackIdx];
+                    audio.src = currentTrack;
+                }
+                audio.play().catch((e) => { console.warn("Audio playback failed:", e.message); });
                 audioBars.forEach(b => b.classList.add("playing"));
                 this.querySelector(".mock-audio-badge").textContent = "▶ REPRODUCIENDO";
             } else {
@@ -79,14 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.15, rootMargin: "-50px" });
 
-    /* ═══ 4. STAGGERED PAIN ITEMS ═══ */
+    /* ═══ 4. OBSERVE ALL FADE-IN ELEMENTS ═══ */
+    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+
+    /* Staggered pain items */
     document.querySelectorAll(".pain-item").forEach((el, i) => {
         el.style.transitionDelay = `${i * 0.12}s`;
-        observer.observe(el);
     });
-
-    /* Observe cards */
-    document.querySelectorAll(".step-card, .fit-card, .testimonial-card, .bonus-card, .after-card").forEach(el => observer.observe(el));
 
     /* ═══ 5. FAQ ACCORDION ═══ */
     document.querySelectorAll(".faq-btn").forEach(btn => {
@@ -169,7 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
         updateCountdown();
-        setInterval(updateCountdown, 1000);
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        window.addEventListener("beforeunload", () => clearInterval(countdownInterval));
     }
 
     /* ═══ 10. STICKY MOBILE CTA ═══ */

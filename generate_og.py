@@ -62,7 +62,7 @@ draw.rounded_rectangle([(badge_x, badge_y), (badge_x + badge_w, badge_y + badge_
 draw.text((badge_x + 20, badge_y + 8), badge_text, fill=(255, 228, 189), font=sans_badge)
 
 # ── Title ──
-title = "Ayudá a tu perro a\ntranquilo cuando salís de casa"
+title = "Ayudá a tu perro a quedarse\ntranquilo cuando salís de casa"
 title_x = 60
 title_y = 150
 draw.text((title_x, title_y), title, fill=(255, 255, 255), font=serif)

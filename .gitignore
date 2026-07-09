@@ -1,0 +1,30 @@
+# Graphify
+graphify-out/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Backups
+*_backup_*
+*_corrupt_*
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Misc
+.cach

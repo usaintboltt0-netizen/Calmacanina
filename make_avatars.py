@@ -1,5 +1,5 @@
 import os
-base = r'c:\Users\Administrator\Desktop\ADIESTRADOR'
+base = os.path.dirname(os.path.abspath(__file__))
 
 avatars = {
 "avatar-maria.svg": '''<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
