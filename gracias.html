@@ -246,6 +246,17 @@
         }
     </style>
     <!-- Página de acceso a materiales para compradores -->
+    <!-- ═══ MODO DEMO ═══ -->
+    <style>
+      #demo-badge-gracias {
+        position: fixed; top: 8px; right: 8px; z-index: 9999;
+        background: #e74c3c; color: white; padding: 6px 14px;
+        border-radius: 50px; font-size: .75rem; font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0 4px 16px rgba(231,76,60,.5);
+        cursor: pointer; display: flex; align-items: center; gap: 6px;
+      }
+    </style>
 </head>
 
 <body>
@@ -346,6 +357,38 @@
 
         <p class="footer-note">© Método Calma Canina™</p>
     </div>
+
+    <!-- ═══ MODO DEMO JS ═══ -->
+    <script>
+      (function() {
+        const isDemo = new URLSearchParams(window.location.search).get("demo") === "1" || 
+                       new URLSearchParams(window.location.search).get("demo") === "true";
+        if (!isDemo) return;
+
+        const badge = document.createElement("div");
+        badge.id = "demo-badge-gracias";
+        badge.innerHTML = '🧪 MODO DEMO <span style="opacity:.7;font-weight:400;font-size:.7rem;">volver a la landing</span>';
+        badge.addEventListener("click", () => {
+          window.location.href = "index.html";
+        });
+        document.body.appendChild(badge);
+
+        // Agregar banner interno de advertencia
+        const container = document.querySelector(".container");
+        if (container) {
+          const warning = document.createElement("div");
+          warning.style.cssText = `
+            background: #fff3cd; border: 1px solid #ffc107; color: #856404;
+            border-radius: 12px; padding: 14px 18px; margin-top: 16px;
+            font-size: .85rem; text-align: center; font-family: 'Inter', sans-serif;
+          `;
+          warning.innerHTML = '🧪 <strong>Esto es una simulación de prueba.</strong> No se realizó ningún pago real. Los materiales mostrados son los que recibirías tras una compra real.';
+          container.insertBefore(warning, container.firstChild);
+        }
+
+        console.log("🧪 Modo Demo activado en página de gracias.");
+      })();
+    </script>
 </body>
 
 </html>

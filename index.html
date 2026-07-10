@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" />
+  <link rel="preload" href="NUEVOBANNER.jpg" as="image" />
   <link rel="stylesheet" href="styles.css?v=20260710-0315" />
 
   <script type="application/ld+json">
@@ -37,9 +38,58 @@
       }
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Sirve para cualquier perro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El método está diseñado para adaptarse a cualquier perro, desde cachorros de 3 meses hasta perros senior de 12 años."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito experiencia entrenando perros?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El método está escrito para dueños sin ninguna experiencia previa. Cada ejercicio está explicado paso a paso con videos demostrativos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo recibo el contenido?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inmediatamente después del pago. Recibís un email con acceso a todos los materiales. Podés empezar el Día 1 en minutos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si tengo dudas durante el proceso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tenés acceso a nuestra comunidad privada de WhatsApp donde podés compartir tu experiencia, hacer preguntas y recibir apoyo de otros dueños."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si no me funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tenés 30 días para pedir tu devolución completa. Te devolvemos el 100% sin hacer preguntas."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#hero">Saltar al contenido principal</a>
   <!-- ═══ HEADER ═══ -->
   <header class="site-header" id="site-header">
     <nav class="nav container">
@@ -243,7 +293,7 @@
         <h2 class="text-center">La historia detrás de Calma Canina</h2>
         <div class="quienes-grid">
           <div class="quienes-video-wrapper">
-            <video class="quienes-video" autoplay muted loop playsinline controls preload="auto">
+            <video class="quienes-video" autoplay muted loop playsinline controls preload="none" poster="CARAVISIBLEDEMARCA.png">
               <source src="PRESENTACION DE LA MEDICA.mp4" type="video/mp4">
             </video>
           </div>
@@ -265,7 +315,7 @@
               </span>
             </div>
             <div class="quienes-video-wrapper" style="margin-top:20px;">
-              <video class="quienes-video" autoplay muted loop playsinline controls preload="auto">
+              <video class="quienes-video" autoplay muted loop playsinline controls preload="none" poster="CARAVISIBLEDEMARCA.png">
                 <source src="quienes-somos.mp4" type="video/mp4">
               </video>
             </div>
@@ -322,17 +372,17 @@
         </div>
         <div class="testimonios-videos-grid">
           <div class="testimonio-video-card fade-in">
-            <video class="testimonio-vid" autoplay muted loop playsinline controls preload="auto">
+            <video class="testimonio-vid" autoplay muted loop playsinline controls preload="none">
               <source src="CLIENTESATISFECHO1.mp4" type="video/mp4">
             </video>
           </div>
           <div class="testimonio-video-card fade-in">
-            <video class="testimonio-vid" autoplay muted loop playsinline controls preload="auto">
+            <video class="testimonio-vid" autoplay muted loop playsinline controls preload="none">
               <source src="CLIENTESATISFECHO2.mp4" type="video/mp4">
             </video>
           </div>
           <div class="testimonio-video-card fade-in">
-            <video class="testimonio-vid" autoplay muted loop playsinline controls preload="auto">
+            <video class="testimonio-vid" autoplay muted loop playsinline controls preload="none">
               <source src="testimonio_final.mp4" type="video/mp4">
             </video>
           </div>
@@ -498,6 +548,140 @@
     <a href="https://mpago.li/13CBR7U" class="btn btn-accent checkout-link" target="_blank" rel="noopener" data-checkout-link>Quiero transformar a mi perro — $40 USD</a>
   </div>
 
+  <!-- ═══ SCROLL TO TOP ═══ -->
+  <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <script src="main.js?v=20260710-0315" defer></script>
+
+  <!-- ═══ MODO SIMULACIÓN (solo para testing) ═══ -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Activación con botón oculto en el footer o con parámetro ?demo=true
+      const isDemo = new URLSearchParams(window.location.search).get("demo") === "1" || 
+                     new URLSearchParams(window.location.search).get("demo") === "true";
+      
+      if (!isDemo) return;
+
+      // 1. Mostrar badge "MODO DEMO 🧪" flotante
+      const demoBadge = document.createElement("div");
+      demoBadge.id = "demo-badge";
+      demoBadge.style.cssText = `
+        position: fixed; top: 8px; right: 8px; z-index: 9999;
+        background: #e74c3c; color: white; padding: 6px 14px;
+        border-radius: 50px; font-size: .75rem; font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0 4px 16px rgba(231,76,60,.5);
+        cursor: pointer; display: flex; align-items: center; gap: 6px;
+      `;
+      demoBadge.innerHTML = '🧪 MODO DEMO <span style="opacity:.7;font-weight:400;font-size:.7rem;">click para salir</span>';
+      demoBadge.addEventListener("click", () => {
+        window.location.href = window.location.pathname;
+      });
+      document.body.appendChild(demoBadge);
+
+      // 2. Overlay de simulación de pago
+      const overlay = document.createElement("div");
+      overlay.id = "demo-overlay";
+      overlay.style.cssText = `
+        display: none; position: fixed; inset: 0; z-index: 10000;
+        background: rgba(0,0,0,.65); backdrop-filter: blur(6px);
+        align-items: center; justify-content: center; padding: 20px;
+      `;
+      
+      const modal = document.createElement("div");
+      modal.style.cssText = `
+        background: #fbf8f2; border-radius: 24px; max-width: 420px;
+        width: 100%; padding: 32px 28px; text-align: center;
+        box-shadow: 0 40px 120px rgba(0,0,0,.4);
+        font-family: 'Inter', system-ui, sans-serif;
+        animation: demoFadeIn .35s ease;
+      `;
+      modal.innerHTML = `
+        <style>
+          @keyframes demoFadeIn { from { opacity:0; transform:translateY(30px) scale(.95); } to { opacity:1; transform:translateY(0) scale(1); } }
+          @keyframes demoSpin { to { transform:rotate(360deg); } }
+        </style>
+        <div style="font-size:2.4rem;margin-bottom:8px;">🧪</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#18332B;margin-bottom:6px;font-weight:500;">
+          Modo Simulación
+        </h2>
+        <p style="color:#67645E;font-size:.9rem;margin-bottom:18px;line-height:1.6;">
+          Estás probando el flujo de compra sin realizar un pago real.
+          Hacé clic en "Completar compra demo" para ver la página de agradecimiento.
+        </p>
+        <div style="background:#f3eee5;border-radius:12px;padding:16px;margin-bottom:20px;text-align:left;">
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:8px;">
+            <span style="color:#20231F;">Método Calma Canina™</span>
+            <span style="color:#18332B;font-weight:600;">$40 USD</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:8px;">
+            <span style="color:#20231F;">Método Calma Canina™</span>
+            <span style="color:#18332B;font-weight:600;">$47 USD</span>
+          </div>
+          <div style="border-top:1px solid rgba(0,0,0,.12);padding-top:8px;display:flex;justify-content:space-between;font-size:.9rem;">
+            <span style="color:#20231F;font-weight:600;">Total</span>
+            <span style="color:#A66A4B;font-weight:700;">$0 USD (Demo)</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <button id="demo-complete" style="
+            padding: 14px 28px; border-radius: 50px; border: none;
+            background: linear-gradient(135deg,#18332B,#2F5D50);
+            color: white; font-size: .95rem; font-weight: 600; cursor: pointer;
+            transition: all .2s; box-shadow: 0 14px 32px rgba(47,93,80,.24);
+          " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+            ✅ Completar compra demo
+          </button>
+          <button id="demo-cancel" style="
+            padding: 10px; border-radius: 50px; border: 1px solid rgba(0,0,0,.15);
+            background: transparent; color: #67645E; font-size: .85rem; cursor: pointer;
+            transition: all .2s;
+          " onmouseover="this.style.color='#20231F'" onmouseout="this.style.color='#67645E'">
+            Cancelar
+          </button>
+        </div>
+      `;
+      
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+
+      // 3. Interceptar clicks en botones de compra
+      const interceptCheckout = (e) => {
+        if (e.target.closest("[data-checkout-link]") || e.target.closest("[data-shopify-link]") || e.target.closest(".checkout-link")) {
+          e.preventDefault();
+          overlay.style.display = "flex";
+          document.body.style.overflow = "hidden";
+        }
+      };
+      document.addEventListener("click", interceptCheckout);
+
+      // 4. Botones del modal
+      document.getElementById("demo-complete").addEventListener("click", () => {
+        // Simular redirección con efecto de carga
+        document.getElementById("demo-complete").textContent = "⏳ Redirigiendo...";
+        document.getElementById("demo-complete").disabled = true;
+        setTimeout(() => {
+          window.location.href = "gracias.html?demo=1";
+        }, 1200);
+      });
+
+      document.getElementById("demo-cancel").addEventListener("click", () => {
+        overlay.style.display = "none";
+        document.body.style.overflow = "";
+      });
+
+      // Click fuera del modal cierra
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          overlay.style.display = "none";
+          document.body.style.overflow = "";
+        }
+      });
+
+      console.log("🧪 Modo Demo activado — los botones de compra muestran simulador en lugar de redirigir.");
+    });
+  </script>
 </body>
 </html>

@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const TRACKS = [
         "Music/ribhavagrawal-pure-theta-4-7hz-rain-and-417hz-music-351390.mp3",
-        "Music/nourishedbymusic-peaceful-mantra-240925.mp3"
+        "Music/nourishedbymusic-peaceful-mantra-240925.mp3",
+        "Music/purebinaural-purebinaural-45-hz-theta-isochronic-tones-with-fores-rain-496538.mp3",
+        "Music/tim_kulig_free_music-celestial-theta-brainstems-232571.mp3",
+        "Music/mindfulliving-celebration-vibrations-350640.mp3"
     ];
     let trackIdx = 0;
 
@@ -175,6 +178,19 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCountdown();
         const countdownInterval = setInterval(updateCountdown, 1000);
         window.addEventListener("beforeunload", () => clearInterval(countdownInterval));
+    }
+
+    /* ═══ SCROLL TO TOP ═══ */
+    const scrollTopBtn = document.getElementById("scroll-top");
+    if (scrollTopBtn) {
+        const checkScrollTop = () => {
+            scrollTopBtn.classList.toggle("visible", window.scrollY > 500);
+        };
+        window.addEventListener("scroll", checkScrollTop, { passive: true });
+        checkScrollTop();
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     }
 
     /* ═══ 10. STICKY MOBILE CTA ═══ */
