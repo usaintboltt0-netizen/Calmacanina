@@ -1,4 +1,4 @@
-:root {
+ :root {
     --primary: #2F5D50;
     --primary-dark: #18332B;
     --primary-light: #7FAF9A;
@@ -354,7 +354,7 @@ p {
 
 .pain-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-card-hover); border-color: rgba(47, 93, 80, .18); background: rgba(255, 255, 255, .94) }
 
-.pain-icon { width: 42px; height: 42px; display: grid; place-items: center; flex-shrink: 0; border-radius: 50%; font-size: 1.1rem; }
+.pain-icon { width: 42px; height: 42px; display: grid; place-items: center; flex-shrink: 0; border-radius: 50%; font-size: 1.1rem; background: rgba(166, 106, 75, .08); color: var(--accent); font-weight: 300; }
 
 .pain-item p { font-weight: 400; color: var(--text); font-size: .92rem; margin: 0 }
 .pain-item strong { color: var(--primary-dark); font-weight: 600 }
@@ -419,9 +419,6 @@ p {
 .check-list li:hover { box-shadow: var(--shadow-card-hover); transform: translateX(4px) }
 .check-list strong { font-size: .9rem; color: var(--text); font-weight: 500 }
 .check-list span { font-size: .82rem; color: var(--text-secondary) }
-
-/* ═══ FIT ═══ */
-.fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; align-items: stretch }
 
 /* ═══ STEPS ═══ */
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px }
@@ -542,7 +539,6 @@ p {
 }
 
 .trust-feature:hover { transform: translateY(-5px); box-shadow: var(--shadow-card-hover) }
-.trust-feature-icon { font-size: 2rem; display: block; margin-bottom: 12px; }
 .trust-feature h3 { font-size: .95rem; color: var(--primary-dark); font-weight: 500; margin-bottom: 6px; }
 .trust-feature p { font-size: .82rem; color: var(--text-secondary); margin: 0; }
 
