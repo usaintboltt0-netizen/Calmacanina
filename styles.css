@@ -343,7 +343,9 @@ p {
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(42, 38, 31, .1);
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .quienes-video {
