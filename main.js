@@ -20,23 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentTrack = TRACKS[trackIdx];
     audio.src = currentTrack;
 
+    function toggleAudio() {
+        if (audio.paused) {
+            if (!audio.src || audio.src === window.location.href) {
+                trackIdx = (trackIdx + 1) % TRACKS.length;
+                currentTrack = TRACKS[trackIdx];
+                audio.src = currentTrack;
+            }
+            audio.play().catch((e) => { console.warn("Audio playback failed:", e.message); });
+            audioBars.forEach(b => {
+                b.classList.add("playing");
+                b.querySelector(".mock-audio-badge").textContent = "▶ REPRODUCIENDO";
+            });
+        } else {
+            audio.pause();
+            audioBars.forEach(b => {
+                b.classList.remove("playing");
+                b.querySelector(".mock-audio-badge").textContent = "BONO";
+            });
+        }
+    }
+
     audioBars.forEach(bar => {
-        bar.addEventListener("click", function onClick() {
-            if (audio.paused) {
-                if (!audio.src || audio.src === window.location.href) {
-                    trackIdx = (trackIdx + 1) % TRACKS.length;
-                    currentTrack = TRACKS[trackIdx];
-                    audio.src = currentTrack;
-                }
-                audio.play().catch((e) => { console.warn("Audio playback failed:", e.message); });
-                audioBars.forEach(b => b.classList.add("playing"));
-                this.querySelector(".mock-audio-badge").textContent = "▶ REPRODUCIENDO";
-            } else {
-                audio.pause();
-                audioBars.forEach(b => {
-                    b.classList.remove("playing");
-                    b.querySelector(".mock-audio-badge").textContent = "BONO";
-                });
+        bar.addEventListener("click", toggleAudio);
+        bar.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+                e.preventDefault();
+                toggleAudio();
             }
         });
     });
