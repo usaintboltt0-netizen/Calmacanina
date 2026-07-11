@@ -67,6 +67,20 @@ document.addEventListener("DOMContentLoaded", () => {
         link.setAttribute("href", SHOPIFY_URL);
     });
 
+    /* ═══ ANALYTICS (GA4) ═══
+       No-op si gtag no está cargado - permite trabajar sin bloquear en dev/local. */
+    function track(eventName, params) {
+        if (typeof gtag === "function") gtag("event", eventName, params || {});
+    }
+
+    document.addEventListener("click", (e) => {
+        if (e.target.closest("[data-checkout-link]")) {
+            track("click_checkout_mercadopago", { value: 30, currency: "USD" });
+        } else if (e.target.closest("[data-shopify-link]")) {
+            track("click_checkout_shopify", { value: 47, currency: "USD" });
+        }
+    });
+
     /* ═══ 1. STICKY HEADER ═══ */
     const header = document.getElementById("site-header");
     const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 60);
@@ -100,6 +114,20 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ═══ 4. OBSERVE ALL FADE-IN ELEMENTS ═══ */
     document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 
+    /* Track cuando la sección de precios entra en pantalla (una sola vez) */
+    const pricingEl = document.getElementById("pricing");
+    if (pricingEl) {
+        const pricingObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    track("view_pricing");
+                    pricingObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        pricingObserver.observe(pricingEl);
+    }
+
     /* Staggered pain items */
     document.querySelectorAll(".pain-item").forEach((el, i) => {
         el.style.transitionDelay = `${i * 0.12}s`;
@@ -117,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             const isActive = item.classList.toggle("active");
             btn.setAttribute("aria-expanded", String(isActive));
+            if (isActive) track("faq_open", { question: btn.textContent.replace("+", "").trim() });
         });
     });
 

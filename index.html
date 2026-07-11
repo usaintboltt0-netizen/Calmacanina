@@ -19,6 +19,21 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" />
   <link rel="stylesheet" href="styles.css?v=20260710-1200" />
 
+  <!-- ═══ GOOGLE ANALYTICS 4 ═══
+       PASO A PASO PARA ACTIVARLO (2 minutos):
+       1) Entrá a https://analytics.google.com con tu cuenta de Google.
+       2) Creá una cuenta y una propiedad GA4 (te va a pedir el nombre del sitio y el país).
+       3) Te va a dar un "ID de medición" con formato G-XXXXXXXXXX.
+       4) Reemplazá las DOS apariciones de G-XXXXXXXXXX de acá abajo por ese ID.
+       Mientras diga G-XXXXXXXXXX, este script no manda datos a ningún lado (Google lo ignora). -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -647,11 +662,32 @@
 
       // 4. Botones del modal
       document.getElementById("demo-complete").addEventListener("click", () => {
-        // Simular redirección con efecto de carga
-        document.getElementById("demo-complete").textContent = "⏳ Redirigiendo...";
+        // Simular "compra" sin navegar a la página real de acceso ni exponer
+        // sus links de descarga - el modo demo no debe filtrar el producto real.
+        document.getElementById("demo-complete").textContent = "⏳ Procesando...";
         document.getElementById("demo-complete").disabled = true;
         setTimeout(() => {
-          window.location.href = "gracias.html?demo=1";
+          modal.innerHTML = `
+            <div style="font-size:2.4rem;margin-bottom:8px;">✅</div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#18332B;margin-bottom:6px;font-weight:500;">
+              ¡Compra demo completada!
+            </h2>
+            <p style="color:#67645E;font-size:.9rem;margin-bottom:20px;line-height:1.6;">
+              En una compra real, acá recibirías acceso inmediato a la guía, los audios, el calendario y la comunidad de WhatsApp, más un email con los mismos links.
+            </p>
+            <button id="demo-close" style="
+              padding: 14px 28px; border-radius: 50px; border: none;
+              background: linear-gradient(135deg,#18332B,#2F5D50);
+              color: white; font-size: .95rem; font-weight: 600; cursor: pointer;
+              transition: all .2s; box-shadow: 0 14px 32px rgba(47,93,80,.24);
+            " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+              Volver a la página
+            </button>
+          `;
+          document.getElementById("demo-close").addEventListener("click", () => {
+            overlay.style.display = "none";
+            document.body.style.overflow = "";
+          });
         }, 1200);
       });
 
