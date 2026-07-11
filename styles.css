@@ -699,7 +699,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--secondary); out
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:900px) {
-    .hero-grid, .two-col, .quienes-grid { grid-template-columns: 1fr; gap: 32px }
+    .hero-grid, .two-col, .quienes-grid { grid-template-columns: minmax(0, 1fr); gap: 32px }
     .hero-visual { order: initial }
     .hero::before { inset: 70px 3% 30px; border-radius: 28px; }
     .solution-grid { grid-template-columns: repeat(2, 1fr); }
