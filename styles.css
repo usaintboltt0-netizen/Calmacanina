@@ -88,7 +88,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; line-height: 1.2 
 h1 {
     font-size: clamp(2rem, 4.5vw, 3.2rem);
     letter-spacing: -.03em;
-    font-weight: 450;
+    font-weight: 500;
     line-height: 1.1;
     color: var(--primary-dark)
 }
@@ -225,9 +225,10 @@ p {
 /* ═══ HERO ═══ */
 .hero {
     min-height: 86vh; display: flex; align-items: center;
-    background: linear-gradient(90deg, rgba(13, 27, 20, .9) 0%, rgba(13, 27, 20, .72) 38%, rgba(13, 27, 20, .42) 68%, rgba(13, 27, 20, .2) 100%),
+    background: linear-gradient(90deg, rgba(13, 27, 20, .4) 0%, rgba(13, 27, 20, .15) 45%, transparent 100%),
         radial-gradient(circle at 18% 45%, rgba(212, 165, 116, .22), transparent 30rem),
-        url('NUEVOBANNER.jpg') center 42% / cover no-repeat;
+        radial-gradient(circle at 82% 28%, rgba(127, 175, 154, .16), transparent 34rem),
+        linear-gradient(135deg, #173128 0%, #264E43 58%, #18332B 100%);
     color: var(--white); padding: 126px 0 76px; position: relative; overflow: hidden; isolation: isolate;
 }
 
@@ -544,12 +545,12 @@ p {
 }
 
 @media(min-width:768px) {
-    .testimonios-videos-grid { grid-template-columns: repeat(3, 1fr); max-width: 750px; gap: 20px; }
+    .testimonios-videos-grid { grid-template-columns: repeat(2, 1fr); max-width: 620px; gap: 20px; }
     .testimonio-vid { max-height: 300px; }
 }
 
 @media(min-width:1100px) {
-    .testimonios-videos-grid { grid-template-columns: repeat(3, 1fr); max-width: 900px; gap: 24px; }
+    .testimonios-videos-grid { grid-template-columns: repeat(2, 1fr); max-width: 680px; gap: 24px; }
     .testimonio-vid { max-height: 340px; }
 }
 
@@ -618,7 +619,7 @@ p {
 
 .countdown { display: flex; justify-content: center; gap: 8px; margin: 28px 0 }
 .countdown-item { background: rgba(0, 0, 0, .25); border-radius: var(--radius-xs); padding: 14px 18px; min-width: 62px; border: 1px solid rgba(255, 255, 255, .06) }
-.countdown-num { display: block; font-family: var(--font-serif); font-size: 1.5rem; color: var(--white); font-weight: 700 }
+.countdown-num { display: block; font-family: var(--font-sans); font-variant-numeric: tabular-nums; font-size: 1.5rem; color: var(--white); font-weight: 600; letter-spacing: -.01em }
 .countdown-label { display: block; font-size: .6rem; color: rgba(255, 255, 255, .5); text-transform: uppercase; margin-top: 2px }
 
 .guarantee-line { color: #FFE4BD; font-weight: 700; margin: 22px 0 }
@@ -733,7 +734,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--secondary); out
 @media(max-width:640px) {
     .section { padding: 46px 0 }
     .container, .narrow { width: min(100% - 32px, var(--max-width)) }
-    .hero { min-height: auto; padding: 108px 0 46px; background: linear-gradient(90deg, rgba(13, 27, 20, .9) 0%, rgba(13, 27, 20, .72) 38%, rgba(13, 27, 20, .42) 68%, rgba(13, 27, 20, .2) 100%), radial-gradient(circle at 18% 45%, rgba(212, 165, 116, .22), transparent 30rem), url('BANERMOVIL.png') center 42% / cover no-repeat; }
+    .hero { min-height: auto; padding: 108px 0 46px; }
     .hero .hero-grid { gap: 18px; }
     .hero-content { gap: 12px; }
     .hero-trust-strip { gap: 8px; padding: 12px; justify-content: center; }
