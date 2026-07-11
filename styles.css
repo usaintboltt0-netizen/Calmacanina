@@ -603,11 +603,12 @@ p {
 .trust-feature p { font-size: .82rem; color: var(--text-secondary); margin: 0; line-height: 1.6 }
 
 /* ═══ PRICING ═══ */
-.price-compare-list { margin-bottom: 24px }
+.price-compare-line { margin-bottom: 20px; opacity: .68; font-size: .92rem }
 .old-price { font-size: 1.4rem; margin: 0 }
 
 .price {
     font-family: var(--font-serif);
+    font-variant-numeric: lining-nums;
     font-size: clamp(2.6rem, 7vw, 3.8rem);
     background: linear-gradient(135deg, var(--secondary), #FFE4BD);
     -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -622,7 +623,6 @@ p {
 .countdown-num { display: block; font-family: var(--font-sans); font-variant-numeric: tabular-nums; font-size: 1.5rem; color: var(--white); font-weight: 600; letter-spacing: -.01em }
 .countdown-label { display: block; font-size: .6rem; color: rgba(255, 255, 255, .5); text-transform: uppercase; margin-top: 2px }
 
-.guarantee-line { color: #FFE4BD; font-weight: 700; margin: 22px 0 }
 
 .offer-checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; max-width: 500px; margin: 0 auto; text-align: left; color: rgba(255, 255, 255, .9) }
 .offer-checklist li { font-size: .9rem; line-height: 1.6 }
