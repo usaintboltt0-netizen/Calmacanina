@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ═══ CONFIGURACIÓN DE PAGO ═══
-       1) En Mercado Pago creá un "Link de pago" por $47 USD o su equivalente.
-       2) Copiá el link generado.
-       3) Pegalo abajo reemplazando el valor de CHECKOUT_URL.
-       Ejemplos válidos: https://mpago.la/XXXXXXX o https://link.mercadopago.com/tuusuario */
+       Mercado Pago cobra en pesos argentinos (ARS) - actualmente $34.999 ARS.
+       Si cambiás el precio en Mercado Pago, actualizá también el texto en
+       index.html (busca "$34.999 ARS") para que coincida con lo que ve el
+       comprador en el checkout real. */
     const CHECKOUT_URL = "https://mpago.li/13CBR7U";
     const SHOPIFY_URL = "https://ebooksaudiolibros.myshopify.com/";
 
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("click", (e) => {
         if (e.target.closest("[data-checkout-link]")) {
-            track("click_checkout_mercadopago", { value: 30, currency: "USD" });
+            track("click_checkout_mercadopago", { value: 34999, currency: "ARS" });
         } else if (e.target.closest("[data-shopify-link]")) {
             track("click_checkout_shopify", { value: 47, currency: "USD" });
         }
